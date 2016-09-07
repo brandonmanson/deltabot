@@ -9,6 +9,7 @@ var spotifyApi = new SpotifyWebApi({
 module.exports = function(robot) {
   robot.respond(/jam to (.*)/i, function(msg) {
     var artist = msg.match[1];
+    console.log(artist);
     spotifyApi.searchArtists(artist)
     .then(function(data) {
       var parsedJson = JSON.parse(data.body);
