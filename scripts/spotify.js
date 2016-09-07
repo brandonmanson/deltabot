@@ -13,7 +13,7 @@ module.exports = function(robot) {
     .then(function(data) {
       var parsedJson = JSON.parse(data.body);
       var url = parsedJson.artists.items[0].external_urls.spotify;
-      msg.reply(url);
+      msg.reply("RESPONSE: " + data.body);
     })
   })
 }
