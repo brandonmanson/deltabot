@@ -10,7 +10,7 @@ module.exports = function(robot) {
   robot.respond(/jam to (.*)/i, function(msg) {
     var artist = msg.match[1];
     console.log(artist);
-    spotifyApi.searchArtists('eminem')
+    spotifyApi.searchArtists('Eminem')
     .then(function(data) {
       var parsedJson = JSON.parse(data.body);
       var url = parsedJson.artists.items[0].external_urls.spotify;
