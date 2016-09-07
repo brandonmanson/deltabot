@@ -10,11 +10,11 @@ module.exports = function(robot) {
   robot.respond(/jam to (.*)/i, function(msg) {
     var artist = msg.match[1];
     console.log(artist);
-    spotifyApi.searchArtists(artist)
+    spotifyApi.searchArtists('eminem')
     .then(function(data) {
       var parsedJson = JSON.parse(data.body);
       var url = parsedJson.artists.items[0].external_urls.spotify;
-      console.log("Search artists by " + artist, data.body);
+      console.log("Search artists by eminem", data.body);
       msg.reply(artist);
     }, function(err) {
       console.error(err);
