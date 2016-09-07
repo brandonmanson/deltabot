@@ -1,10 +1,6 @@
 var SpotifyWebApi = require('spotify-web-api-node');
 
-var spotifyApi = new SpotifyWebApi({
-  clientId: '54b550eaad0748afb6577403a2b09b6a',
-  slientSecret: '416e48a5cabf4eb6b006dd876b64c534',
-  redirectUri: ''
-});
+var spotifyApi = new SpotifyWebApi();
 
 module.exports = function(robot) {
   robot.respond(/jam to (.*)/i, function(msg) {
