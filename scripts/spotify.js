@@ -9,11 +9,11 @@ var spotifyApi = new SpotifyWebApi({
 module.exports = function(robot) {
   robot.respond(/jam to (.*)/i, function(msg) {
     var artist = msg.match[1];
-    // spotifyApi.searchArtists(artist)
-    // .then(function(data) {
-    //   var parsedJson = JSON.parse(data.body);
-    //   var url = parsedJson.artists.items[0].external_urls.spotify;
+    spotifyApi.searchArtists(artist)
+    .then(function(data) {
+      var parsedJson = JSON.parse(data.body);
+      var url = parsedJson.artists.items[0].external_urls.spotify;
       msg.reply(artist);
-    // })
+    })
   })
 }
