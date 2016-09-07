@@ -10,7 +10,7 @@ module.exports = function(robot) {
   robot.respond(/jam to (.*)/i, function(msg) {
     var artist = msg.match[1];
     console.log(artist);
-    spotifyApi.searchArtists('Love')
+    spotifyApi.searchTracks('Love')
       .then(function(data) {
           console.log('Search artists by "Love"', data.body);
         }, function(err) {
