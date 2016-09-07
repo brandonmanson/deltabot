@@ -13,6 +13,7 @@ module.exports = function(robot) {
     .then(function(data) {
       var parsedJson = JSON.parse(data.body);
       var url = parsedJson.artists.items[0].external_urls.spotify;
+      console.log("Search artists by " + artist, data.body);
       msg.reply(artist);
     }, function(err) {
       console.error(err);
