@@ -7,6 +7,7 @@ module.exports = function(robot) {
       if (err) {
         console.log(err);
       }
+      console.log(body);
       data = JSON.parse(body);
       id = data.items.id.playlistId;
       url = "https://youtube.com/playlist?list=" + id;
